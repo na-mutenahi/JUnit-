@@ -19,7 +19,8 @@ public class C03_KeyboardActions extends TestBase {
 
 
         //3- Ad, soyad, mail ve sifre kutularina deger yazalim ve kaydol tusuna basalim
-       WebElement isimKutusu= driver.findElement(By.xpath("//input[@placeholder='First name']"));
+        bekle(2);
+        WebElement isimKutusu= driver.findElement(By.xpath("(//input[@name='firstname'])[1]"));
 
         Actions actions= new Actions(driver);
         Faker faker= new Faker();
@@ -52,5 +53,6 @@ public class C03_KeyboardActions extends TestBase {
                 .perform();
 
         //4- Kaydol tusuna basalim
+        bekle(10);
     }
 }
