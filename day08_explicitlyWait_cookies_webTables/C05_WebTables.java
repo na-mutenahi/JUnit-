@@ -16,12 +16,15 @@ public class C05_WebTables extends TestBase {
     public void test01(){
         //1."https://www.amazon.com" adresine gidin
         driver.get("https://www.amazon.com");
+
         //2.Sayfanin en altina inin
         Actions actions= new Actions(driver);
         actions.sendKeys(Keys.END).perform();
+
         //3.Web table tum body’sini yazdirin
         WebElement tumBody= driver.findElement(By.xpath("//tbody"));
         System.out.println(tumBody.getText());
+
         //4.Web table’daki satir sayisinin 10 oldugunu test edin
         List<WebElement> satirlarListesi = driver.findElements(By.xpath("//tbody/tr"));
 

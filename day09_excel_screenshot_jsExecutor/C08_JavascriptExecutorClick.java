@@ -13,11 +13,12 @@ public class C08_JavascriptExecutorClick extends TestBase {
 
         // wisequarter anasayfaya gidelim
         driver.get("https://www.wisequarter.com");
+
         //refresh diyerek reklami gecin
         driver.navigate().refresh();
 
-        // Java Test otomation tanitimina kadar asagi inin
-        WebElement otomasyonElementi= driver.findElement(By.xpath("(//img[@alt='Automation Engineer'])[1]"));
+        // Free Java tanitimina kadar asagi inin
+        WebElement otomasyonElementi= driver.findElement(By.xpath("(//img[@alt='Free Java course'])[2]"));
 
         bekle(2);
         JavascriptExecutor jse = (JavascriptExecutor) driver;

@@ -4,6 +4,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,7 +13,6 @@ public class C01_ReadExcel {
 
     @Test
     public void test01() throws IOException {
-
         /*
             Biz kodlarimizla bilgisayardaki bir dosyaya direk erisim saglayip
             anlik o dosyadan bilgi almayiz
@@ -28,12 +28,12 @@ public class C01_ReadExcel {
 
         // 1- bilgisayardaki excel'e ulasabilmek icin dosyaYolu gerekir
 
-        String dosyaYolu= "src/test/java/day09_excel_screenshot_jsExecutor/ulkeler.xlsx";
+        String doyaYolu= "src/test/java/day09_excel_screenshot_jsExecutor/ulkeler.xlsx";
 
         // 2- Dosya yolunu olusturdugumuz excel'den bilgileri almak icin
         //    FileInputStream objesi olusturmaliyiz
 
-        FileInputStream fis = new FileInputStream(dosyaYolu);
+        FileInputStream fis = new FileInputStream(doyaYolu);
 
         // 3- Bilgilerini aldigimiz excel'de calisma yapabilmek icin
         //    kod ortamimizda kopya bir workbook olusturmaliyiz
@@ -50,14 +50,16 @@ public class C01_ReadExcel {
 
         // 12.satirin, 3.hucresinin "Azerbaycan" oldugunu test edin
         Sheet sayfa1= workbook.getSheet("Sayfa1");
-        // excel index kullanir yani 0'dan baslar
         Row row= sayfa1.getRow(11);
         Cell cell= row.getCell(2);
 
         String expectedData="Azerbaycan";
-        String actualData = cell.toString();
+        String actualData= cell.toString();
 
         Assert.assertEquals(expectedData,actualData);
 
+
+
     }
+
 }
